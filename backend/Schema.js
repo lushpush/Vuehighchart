@@ -51,7 +51,7 @@ SELECT parent_id, name, type, value FROM generate_data;`,
             return console.log(err.message);
           }
           // get the last insert id
-          console.log(`A row has been inserted with rowid ${this.lastID}`);
+          console.log(`A row has been inserted with row ID ${this.lastID}`);
         }
       );
 
