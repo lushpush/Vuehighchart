@@ -16,7 +16,7 @@ const chartData = ref([]);
 
 async function fetchData() {
   try {
-    const response = await axios.get("http://localhost:3001/api/tree"); // or http://localhost:3001/api/tree
+    const response = await axios.get("http://localhost:3001/api/tree"); // Update the URL if your backend runs elsewhere
     chartData.value = response.data;
   } catch (error) {
     console.error("Error fetching data:", error);
