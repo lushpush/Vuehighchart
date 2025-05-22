@@ -5,10 +5,21 @@
 <script setup>
 import { ref, onMounted, watch } from "vue";
 import Highcharts from "highcharts";
-import treemapModule from "highcharts/modules/treemap.js";
+import treemapModule from "highcharts/modules/treemap";
 import axios from "axios";
 
-treemapModule(Highcharts);
+// Some bundlers expose the module factory on `default`, others directly export
+// the function. Normalize before using it to avoid runtime errors.
+const initTreemap =
+  typeof treemapModule === "function"
+    ? treemapModule
+    : treemapModule && typeof treemapModule.default === "function"
+    ? treemapModule.default
+    : null;
+
+if (initTreemap) {
+  initTreemap(Highcharts);
+}
 
 const chartContainer = ref(null);
 const chart = ref(null);
