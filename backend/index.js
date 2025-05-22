@@ -1,9 +1,11 @@
 const express = require('express');
 const sqlite3 = require('sqlite3').verbose();
 const cors = require('cors');
+const path = require("path");
 
 const app = express();
-const db = new sqlite3.Database('./mydatabase.db');
+const dbPath = path.join(__dirname, "mydatabase.db");
+const db = new sqlite3.Database(dbPath);
 
 app.use(cors());
 
@@ -31,7 +33,13 @@ app.get('/api/tree', (req, res) => {
     });
 });
 
-const PORT = 3001;
-app.listen(PORT, () => {
-    console.log(`Server running on http://localhost:${PORT}`);
-});
+// Export the app for testing
+module.exports = app;
+
+// Start the server when this file is run directly
+if (require.main === module) {
+    const PORT = 3001;
+    app.listen(PORT, () => {
+        console.log(`Server running on http://localhost:${PORT}`);
+    });
+}

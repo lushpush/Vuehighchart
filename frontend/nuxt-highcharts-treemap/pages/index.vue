@@ -1,7 +1,9 @@
 <template>
   <div>
     <h1>Highcharts Treemap</h1>
-    <TreeMapChart />
+    <ClientOnly>
+      <TreeMapChart />
+    </ClientOnly>
   </div>
 </template>
 
