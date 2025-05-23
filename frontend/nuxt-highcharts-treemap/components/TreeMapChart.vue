@@ -8,7 +8,8 @@ import Highcharts from "highcharts";
 import treemap from "highcharts/modules/treemap";
 import axios from "axios";
 
-treemap(Highcharts);
+// treemap(Highcharts);
+HighchartsTreemap (Highcharts)  
 
 const chartContainer = ref(null);
 const chart = ref(null);
