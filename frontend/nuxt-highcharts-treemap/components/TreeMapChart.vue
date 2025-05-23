@@ -5,7 +5,7 @@
 <script setup>
 import { ref, onMounted, watch } from "vue";
 import Highcharts from "highcharts";
-import treemap from "highcharts/modules/treemap";
+import HighchartsTreemap  from "highcharts/modules/treemap";
 import axios from "axios";
 
 // treemap(Highcharts);
