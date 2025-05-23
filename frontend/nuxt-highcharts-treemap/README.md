@@ -9,7 +9,7 @@ Make sure to install dependencies:
 ```bash
 # npm
 npm install
-
+npm install highcharts @highcharts/vue
 # pnpm
 pnpm install
 
